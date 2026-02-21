@@ -12,20 +12,20 @@ body {
     /*background-image: url('imagens/fundo1920x1080.jpeg');*/
     height: 100vh;
     background: linear-gradient(135deg, #7873f5,#ff6ec4);
-    display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
 }
 main {
-    width: 50%;
+    width: 100%;
     max-width: 800px;
-    display: flex;
-    flex-wrap: wrap;
+    /*flex-wrap: wrap;*/
+    justify-content: center;
+    align-items: center;
+    
 }
 section {
     width: 400px;
-    height: auto;
+    height: 500px;
     background-color: rgba(255, 255, 255, 0.432);
     box-shadow: 2px 2px 2px 0px #0000005e; 
     border: 2px solid rgba(225, 225, 225, 0.322);
@@ -38,9 +38,7 @@ section {
 .sobre {
     background-color: #12192C; 
     border: 2px solid #12192C;
-    border-radius: 0 0px 100px 0;
-    
-    
+    border-radius: 0 0px 100px 0;   
 }
 h1{
     color: rgb(18, 18, 19);
@@ -97,7 +95,7 @@ picture {
     padding-bottom: 15px;
 
 }
-div {
+.email {
     width:fit-content ;
     margin: 0 auto;
     padding-bottom:40px;
