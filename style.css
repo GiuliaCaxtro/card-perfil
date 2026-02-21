@@ -12,16 +12,16 @@ body {
     /*background-image: url('imagens/fundo1920x1080.jpeg');*/
     height: 100vh;
     background: linear-gradient(135deg, #7873f5,#ff6ec4);
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 main {
-    width: 100%;
-    max-width: 800px;
+    width: 100%
+    max-width: 500px;
     /*flex-wrap: wrap;*/
-    justify-content: center;
-    align-items: center;
-    
+    display: flex;
+    justify-content: center; 
 }
 section {
     width: 400px;
@@ -79,7 +79,6 @@ p {
 }
 
 picture img{
-    
     width: 120px;
     height: 120px;
     border-radius: 50%;
