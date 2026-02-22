@@ -1,11 +1,18 @@
 @charset "UTF-8"; 
 
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Bebas+Neue&family=Kaushan+Script&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-@media (max-width: 410px) {
+
+@media (max-width: 520px) {
   .container {
-    flex-direction: column;
+    display: flex;
+    justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    width: auto;
+    height: auto;
+    position: absolute;
   }
+
 }
 
 * {
@@ -17,6 +24,7 @@ body {
     /*background-image: url('imagens/fundo1920x1080.jpeg');*/
     height: 100dvh;
     background: linear-gradient(135deg, #7873f5,#ff6ec4);
+    display: block;
 }
 /* 
 ---------CONTEINERS----------
@@ -27,23 +35,24 @@ body {
     align-items: center;
     height: 100vh;
     text-align: center;
-
+    
 }
 
 .c-direito {
     width: 400px;
-    height: auto;
+    height: 500px;
     background-color: rgba(255, 255, 255, 0.432);
     box-shadow: 2px 2px 2px 0px #0000005e; 
     border: 2px solid rgba(225, 225, 225, 0.322);
-    border-radius: 100px 0 0px 0px;
+    border-radius: 50px 0 0px 3px;
 }
 
 .c-esquerdo {
     width: 400px;
+    height: 502px;
     background-color: #12192C; 
     border: 2px solid #12192C;
-    border-radius: 0 0px 100px 0;   
+    border-radius: 0 3px 50px 0;   
 }
 
 /* 
@@ -64,6 +73,31 @@ h1{
     font-weight: 700;
     text-align: center;
 }
+.c-direito > div{
+    padding: 8rem 2rem 4rem 2rem;
+    
+}
+aside {
+    text-align: center;
+    padding: 44px 0;
+
+}
+aside a:hover{
+    background-color: transparent;
+    padding: 8px;
+    transition: .3s;
+}
+
+aside a{
+    color: black;
+    text-decoration: none;
+    padding-left: 0;
+    padding-right: 0;
+    
+}
+
+
+
 
 /* 
 ---------SOBRE - LADO ESQUERDO----------
@@ -75,8 +109,8 @@ h2 {
     color: rgb(76, 0, 253);
     text-align: center;
     font-weight: 800;
-    padding-top: 28px;
 }
+
 h3 {
     font-size: 17px;
     font-family:'Oswald', sans-serif;
@@ -86,24 +120,23 @@ h3 {
 }
 
 p {
-    padding: 20px 40px 40px 8px;
     text-align: center;
     font-family: 'Oswald',Arial, Helvetica, sans-serif;
     font-weight: 100;
     font-size: 1rem;
     line-height: 1.2em;
     color: rgb(255, 255, 255, 1); 
-    text-indent: 20px; 
+    text-indent: 20px;
+
+}
+.c-esquerdo > div{
+    padding: 8rem 2rem 4rem 2rem;
+    
 }
 
-
-
-
-.email {
+.btn {
     width: fit-content;
-    margin: 0 auto;
-    padding-bottom:40px;
-    
+    margin: 0 auto;  
 }
 
 button {
@@ -118,24 +151,15 @@ button {
     font-weight: 320;
     font-size: 13px;
     border: 2px solid rgba(76, 0, 253, 0.822);
+    transition: all 0.3s ease;
 }
 button:hover {
     color: rgba(225, 225, 225, 0.5);
+    transform: scale(1.1);
+    box-shadow: 1px 5px 5px rgba(0, 0, 0, 0.322);
 }
 
 a{
     text-decoration: none;
 }
 
-aside {
-    text-align: center;
-    padding: 44px 0;
-
-}
-
-aside a{
-    color: black;
-    text-decoration: none;
-    padding-left: 0;
-    padding-right: 0;
-}
