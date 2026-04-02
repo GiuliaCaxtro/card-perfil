@@ -11,7 +11,7 @@ Este é um projeto de **card de perfil profissional**, desenvolvido com HTML e C
 
 
 🔗 Acesse o projeto online:
-👉 https://giuliacaxtro.github.io/card-perfil/
+👉 https://giuliacaxtro.github.io/projeto_card-perfil/
 
 ---
 
