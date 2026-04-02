@@ -15,31 +15,41 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 
 }
 
+html {
+    min-height: 100%;
+    background-image: linear-gradient(135deg, var(--cor2), var(--cor1));
+    background-repeat: no-repeat;
+    background-color: var(--cor2);
+}
+
 body {
-    height: 100dvh;
+    min-height: 100dvh;
     background-image: linear-gradient(135deg, var(--cor2) ,var(--cor1));
     background-repeat:no-repeat;
-    display: block;
-    background-attachment: fixed;
-    
+    background-attachment: scroll;
+    padding: 24px;
+    overflow-x: hidden;
 }
 /* 
 ---------CONTEINERS----------
 */
 .container {
-    display: flex;
+    display: grid;
+    grid-template-columns: minmax(280px, 380px) minmax(280px, 420px);
     justify-content: center;
-    align-items: center;
-    min-height: 100%;
-    text-align: center;  
+    align-content: center;
+    min-height: calc(100dvh - 48px);
+    text-align: center;
+    gap: 0;
 }
 
 .c-direito {
-    width: 400px;
-    height: 500px;
+    width: 100%;
+    min-height: 500px;
     background-color: rgba(255, 255, 255, 0.432);
     box-shadow: 2px 2px 2px 0px #0000005e; 
     border: 2px solid rgba(225, 225, 225, 0.322);
@@ -47,8 +57,8 @@ body {
 }
 
 .c-esquerdo {
-    width: 400px;
-    height: 502px;
+    width: 100%;
+    min-height: 500px;
     background-color: var(--cor5); 
     border: 2px solid var(--cor5);
     border-radius: 0 3px 50px 0;   
@@ -58,8 +68,8 @@ body {
 ---------PERFIL - LADO DIREITO----------
 */
 .ft-perfil{
-    width: 120px;
-    height: 120px;
+    width: clamp(110px, 22vw, 140px);
+    aspect-ratio: 1 / 1;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid rgba(225, 225, 225, 0.322); 
@@ -67,17 +77,22 @@ body {
 }
 h1{
     color: rgb(18, 18, 19);
-    font-size: 26px;
+    font-size: clamp(1.6rem, 3vw, 2rem);
     font-family:'Montserrat Alternates', sans-serif;
     font-weight: 700;
     text-align: center;
 }
 .c-direito > div{
-    padding: 8rem 2rem 4rem 2rem;
+    min-height: 100%;
+    padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 4vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.75rem;
     
 }
 aside {
-    padding: 44px 0;
+    padding: 1.75rem 0 0;
 
 }
 aside a:hover{
@@ -97,7 +112,7 @@ aside a{
 */
 
 h2 {
-    font-size: 2rem;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
     font-family:'Oswald', sans-serif;
     color: var(--cor3);
     text-align: center;
@@ -105,7 +120,7 @@ h2 {
 }
 
 h3 {
-    font-size: 17px;
+    font-size: clamp(1rem, 2vw, 1.15rem);
     font-family:'Oswald', sans-serif;
     color: var(--cor3);
     text-align: center;
@@ -116,14 +131,19 @@ p {
     text-align: center;
     font-family: 'Oswald',Arial, Helvetica, sans-serif;
     font-weight: 100;
-    font-size: 1rem;
-    line-height: 1.2em;
+    font-size: clamp(0.98rem, 1.5vw, 1.08rem);
+    line-height: 1.6;
     color: var(--cor); 
     text-indent: 20px;
 
 }
 .c-esquerdo > div{
-    padding: 8rem 2rem 4rem 2rem;
+    min-height: 100%;
+    padding: clamp(3rem, 8vw, 6rem) clamp(1.5rem, 4vw, 2.5rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1rem;
     
 }
 
@@ -136,13 +156,13 @@ button {
     background-color: var(--cor3);
     color: var(--cor);
     border: 0;
-    padding: 5px 20px;
+    padding: 0.55rem 1.25rem;
     border-radius: 20px;
     display: block;
     box-shadow: 2px 2px 2px 0px #00000069;
     font-family: 'Oswald',Arial, Helvetica, sans-serif;
     font-weight: 320;
-    font-size: 13px;
+    font-size: clamp(0.85rem, 1.8vw, 0.95rem);
     border: 2px solid var(--cor4);
     transition: all 0.3s ease;
 }
@@ -157,14 +177,111 @@ a{
 }
 
 @media (max-width: 520px) {
-  .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    width: auto;
-    height: auto;
-    position: absolute;
-  }
+    body {
+        padding: 16px;
+    }
 
+    .container {
+        grid-template-columns: 1fr;
+        min-height: auto;
+    }
+
+    .c-direito,
+    .c-esquerdo {
+        min-height: auto;
+    }
+
+    .c-direito {
+        border-radius: 36px 36px 0 0;
+    }
+
+    .c-esquerdo {
+        border-radius: 0 0 36px 36px;
+    }
+
+    .c-direito > div,
+    .c-esquerdo > div {
+        padding: 2.5rem 1.25rem;
+    }
+
+    p {
+        text-indent: 0;
+    }
+
+    .btn,
+    button {
+        width: 100%;
+    }
+}
+
+@media (min-width: 521px) and (max-width: 900px) {
+    .container {
+        grid-template-columns: minmax(280px, 360px) minmax(280px, 360px);
+    }
+
+    .c-direito > div,
+    .c-esquerdo > div {
+        padding: 3rem 1.5rem;
+    }
+}
+
+@media (max-height: 520px) and (orientation: landscape) {
+    body {
+        padding: 8px;
+    }
+
+    .container {
+        grid-template-columns: minmax(240px, 320px) minmax(280px, 420px);
+        min-height: calc(100dvh - 24px);
+        width: 100%;
+    }
+
+    .c-direito,
+    .c-esquerdo {
+        min-height: 0;
+    }
+
+    .c-direito > div,
+    .c-esquerdo > div {
+        padding: 1.25rem 1rem;
+    }
+
+    .c-direito > div {
+        gap: 0.5rem;
+    }
+
+    .c-esquerdo > div {
+        gap: 0.75rem;
+    }
+
+    .ft-perfil {
+        width: 82px;
+    }
+
+    h1 {
+        font-size: 1.3rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 0.9rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+        line-height: 1.35;
+        text-indent: 0;
+    }
+
+    aside {
+        padding-top: 0.75rem;
+    }
+
+    button {
+        padding: 0.45rem 1rem;
+        font-size: 0.82rem;
+    }
 }
