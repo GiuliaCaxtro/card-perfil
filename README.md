@@ -3,6 +3,13 @@
 
 Este é um projeto de **card de perfil profissional**, desenvolvido com HTML e CSS, com foco em design moderno, organização de conteúdo e responsividade.
 
+![alt text](readme_img/Screenshot_2.png)
+
+<p align="center">
+<img src="readme_img/Screenshot_3.png" alt="Logo" width="320"  />
+</p>
+
+
 🔗 Acesse o projeto online:
 👉 https://giuliacaxtro.github.io/card-perfil/
 
